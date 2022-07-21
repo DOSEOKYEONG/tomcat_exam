@@ -1,6 +1,5 @@
 package com.ll.exam;
 
-import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -9,8 +8,8 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-@WebServlet("/gugudan")
-public class GugudanServlet extends HttpServlet {
+@WebServlet("/gugudan2")
+public class GugudanServlet2 extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
@@ -22,8 +21,6 @@ public class GugudanServlet extends HttpServlet {
         req.setAttribute("dan", dan);
         req.setAttribute("limit", limit);
 
-        req.getRequestDispatcher("/gugudan.jsp");
-
-        /*RequestDispatcher requestDispatcher = req.getRequestDispatcher("/gugudan2.jsp");*/
+        req.getRequestDispatcher("/gugudan2.jsp").forward(req, resp);
     }
 }
